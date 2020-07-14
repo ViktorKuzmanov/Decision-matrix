@@ -1,7 +1,4 @@
 import React from "react";
-import TableDataCell from "./table cells components/TableDataCell";
-import ScoreCell from "./table cells components/ScoreCell";
-import axios from "axios";
 import FirstRow from "./table cells components/FirstRow";
 import OptionsRow from "./table cells components/OptionsRow";
 import ThirdRow from "./table cells components/ThirdRow";
@@ -22,7 +19,12 @@ function PresentationalTable(props) {
 
         <tbody>
           {props.state.factors.map((factor) => {
-            return <TableRow factor={factor} />;
+            return (
+              <TableRow
+                factor={factor}
+                handleOptionChange={props.handleOptionChange}
+              />
+            );
           })}
 
           <tr>

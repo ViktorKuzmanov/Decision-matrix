@@ -23,7 +23,17 @@ export default class Table extends React.Component {
     });
   }
 
+  handleOptionChange(event) {
+    console.log("aa");
+    console.log(event);
+  }
+
   render() {
-    return <PresentationalTable state={this.state} />;
+    return (
+      <PresentationalTable
+        state={this.state}
+        handleOptionChange={this.handleOptionChange}
+      />
+    );
   }
 }
