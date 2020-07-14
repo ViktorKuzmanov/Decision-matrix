@@ -22,17 +22,13 @@ function PresentationalTable(props) {
 
         <tbody>
           {props.state.factors.map((factor) => {
-            return <TableRow name={factor.name} />;
+            return <TableRow factor={factor} />;
           })}
 
           <tr>
             <td>
               <button>+</button>
             </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
           </tr>
         </tbody>
       </table>

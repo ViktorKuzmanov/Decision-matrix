@@ -8,7 +8,6 @@ function ThirdRow() {
       <TableDataCell text="Weighting" />
       <TableDataCell text="Your score" />
       <TableDataCell text="Your score" />
-      <td></td>
     </tr>
   );
 }

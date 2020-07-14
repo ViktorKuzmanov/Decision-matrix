@@ -5,11 +5,11 @@ import ScoreCell from "./ScoreCell";
 function TableRow(props) {
   return (
     <tr>
-      <TableDataCell text={props.name} isEditable="true" />
-      <td>23</td>
-      <ScoreCell />
-      <ScoreCell />
-      <td></td>
+      <TableDataCell text={props.factor.name} isEditable="true" />
+      <td>{props.factor.weight}</td>
+      {props.factor.scores.map((score) => {
+        return <td>{score}</td>;
+      })}
     </tr>
   );
 }
