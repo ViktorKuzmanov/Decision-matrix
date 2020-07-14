@@ -8,7 +8,7 @@ function TableRow(props) {
   return (
     <tr>
       <TableDataCell text={props.factor.name} isEditable="true" />
-      <td>{props.factor.weight}</td>
+      <td contentEditable="true">{props.factor.weight}</td>
       {props.factor.scores.map((score) => {
         return <ScoreCell value={score} />;
       })}
