@@ -23,6 +23,7 @@ function PresentationalTable(props) {
               <TableRow
                 factor={factor}
                 handleOptionChange={props.handleOptionChange}
+                handleWeightChange={props.handleWeightChange}
               />
             );
           })}

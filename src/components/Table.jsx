@@ -22,10 +22,19 @@ export default class Table extends React.Component {
       this.setState({ factors: factors, options: options });
     });
   }
+  componentWillUnmount() {
+    clearTimeout(this.typingTimerForWeight);
+  }
 
   handleOptionChange(event) {
-    console.log("aa");
-    console.log(event);
+    console.log("ohandleOptionChange is triggered");
+  }
+
+  typingTimerForWeight = null;
+  doneTypingInterval = 5000;
+
+  handleWeightChange() {
+    console.log("weight");
   }
 
   render() {
@@ -33,6 +42,7 @@ export default class Table extends React.Component {
       <PresentationalTable
         state={this.state}
         handleOptionChange={this.handleOptionChange}
+        handleWeightChange={this.handleWeightChange}
       />
     );
   }
