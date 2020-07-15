@@ -3,7 +3,12 @@ import React from "react";
 function ScoreCell(props) {
   return (
     <td class="pt-3-half" contenteditable="true">
-      <select name="cars" id="cars" value={props.value}>
+      <select
+        name="cars"
+        id="cars"
+        value={props.value}
+        onChange={props.handleOptionChange}
+      >
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
