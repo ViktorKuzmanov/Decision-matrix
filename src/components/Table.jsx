@@ -33,8 +33,8 @@ export default class Table extends React.Component {
   typingTimerForWeight = null;
   doneTypingInterval = 5000;
 
-  handleWeightChange() {
-    console.log("weight");
+  handleWeightChange(factor) {
+    
   }
 
   render() {

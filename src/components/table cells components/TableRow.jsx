@@ -8,7 +8,12 @@ function TableRow(props) {
   return (
     <tr>
       <TableDataCell text={props.factor.name} isEditable="true" />
-      <td onInput={props.handleWeightChange} contentEditable="true">
+      <td
+        onInput={() => {
+          props.handleWeightChange(props.factor);
+        }}
+        contentEditable="true"
+      >
         {props.factor.weight}
       </td>
       {props.factor.scores.map((score) => {
