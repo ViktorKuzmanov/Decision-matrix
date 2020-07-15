@@ -2,6 +2,10 @@ const path = require("path");
 const express = require("express");
 const { log } = require("console");
 const app = express(); // create express app
+
+app.use(express.urlencoded());
+app.use(express.json());
+
 let table = {
   "factors": [
       {
@@ -47,6 +51,11 @@ app.use(express.static(path.join(__dirname, "..", "build")));
 
 app.get('/table', (req,res) => {
   res.json(table);
+})
+
+app.post("/changeWeight", (req, res) => {
+  console.log(req.body)
+  res.json({});
 })
 
 // start express server on port 5000

@@ -22,19 +22,13 @@ export default class Table extends React.Component {
       this.setState({ factors: factors, options: options });
     });
   }
-  componentWillUnmount() {
-    clearTimeout(this.typingTimerForWeight);
-  }
 
   handleOptionChange(event) {
     console.log("ohandleOptionChange is triggered");
   }
 
-  typingTimerForWeight = null;
-  doneTypingInterval = 5000;
-
   handleWeightChange(factor) {
-    
+    axios.post("changeWeight", { factor });
   }
 
   render() {
