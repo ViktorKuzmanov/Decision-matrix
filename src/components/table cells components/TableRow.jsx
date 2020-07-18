@@ -16,6 +16,8 @@ function TableRow(props) {
         {props.factor.name}
       </td>
       <ScoreCell
+        // ? dali treba tuka kaa userot kje smene weight da se update odma tuka na frontent
+        // ? ili da cheka da stigne od response od serverot so updated state pa posle
         value={props.factor.weight}
         onChange={(event) => {
           props.handleWeightChange(event, props.factor);

@@ -11,7 +11,7 @@ let table = {
       {
           "id":"0",
           "name": "Semejstvo",
-          "weight": 10,
+          "weight": 9,
           "scores": [
               7,
               10
@@ -40,12 +40,12 @@ let table = {
       {
         "id" :"0",
         "name": "Skopje",
-        "result" : "1"
+        "result" : 0
       },
       {
         "id" :"1",
         "name": "Kavadarci",
-        "result" : "3"
+        "result" : 0
       }
   ]
 }
@@ -56,10 +56,33 @@ app.get('/table', (req,res) => {
   res.json(table);
 })
 
+// ? Kako da a imenua route-ot nekako changeWeight ne e bash taman
+
 app.post("/changeWeight", (req, res) => {
-  console.log(req.body)
-  res.json({});
+  const updatedFactor = req.body.updatedFactor;
+  for(const i in table.factors) {
+    if(table.factors[i].id === updatedFactor.id) {
+      table.factors[i] = updatedFactor;
+    }
+  }
+  updateResultsInTable(table);
+  console.log(table);
+  res.send("a");
 })
+
+function updateResultsInTable(table) {
+  for(let i in table.options) {
+    table.options[i].result = 0;
+  }
+
+  for(let i in table.factors) {
+    const weight = table.factors[i].weight;
+    for(let j in table.factors[i].scores) {
+      const score = table.factors[i].scores[j];
+      table.options[j].result += parseInt(weight * score)
+    }
+  } 
+}
 
 // start express server on port 5000
 app.listen(5000, () => {

@@ -30,10 +30,15 @@ export default class Table extends React.Component {
   }
 
   handleWeightChange(event, factor) {
-    // ! sredi weight
     console.log("handleWeightChange triggered");
-    console.log(event.target.value);
-    console.log(factor);
+    // console.log(event.target.value);
+    // console.log(factor);
+    const changedWeight = event.target.value;
+    const updatedFactor = factor;
+    updatedFactor.weight = parseInt(changedWeight);
+    axios
+      .post("changeWeight", { updatedFactor })
+      .then((res) => console.log(res));
   }
 
   handleFactorNameChange(event, factor) {
