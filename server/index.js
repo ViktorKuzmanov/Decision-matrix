@@ -76,7 +76,6 @@ app.post("/changeOptionName", (req,res) => {
       table.options[i] = changedOption;
     }
   }
-  res.json(table)
 })
 
 function updateResultsInTable(table) {
