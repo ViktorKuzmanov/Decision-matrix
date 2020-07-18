@@ -13,7 +13,10 @@ function PresentationalTable(props) {
       >
         <thead>
           <FirstRow state={props.state} />
-          <OptionsRow state={props.state} />
+          <OptionsRow
+            state={props.state}
+            handleOptionNameChange={props.handleOptionNameChange}
+          />
           <ThirdRow />
         </thead>
 

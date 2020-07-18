@@ -12,6 +12,7 @@ export default class Table extends React.Component {
     this.handleWeightChange = this.handleWeightChange.bind(this);
     this.handleScoreChange = this.handleScoreChange.bind(this);
     this.handleFactorNameChange = this.handleFactorNameChange.bind(this);
+    this.handleOptionNameChange = this.handleOptionNameChange.bind(this);
   }
   componentDidMount() {
     axios.get("table").then((res) => {
@@ -48,6 +49,13 @@ export default class Table extends React.Component {
     axios.post("changeFactor", { changedFactor });
   }
 
+  handleOptionNameChange(event, option) {
+    const changedName = event.target.textContent;
+    console.log(option);
+    const changedOption = option;
+    changedOption.name = changedName;
+  }
+
   render() {
     return (
       <PresentationalTable
@@ -55,6 +63,7 @@ export default class Table extends React.Component {
         handleScoreChange={this.handleScoreChange}
         handleWeightChange={this.handleWeightChange}
         handleFactorNameChange={this.handleFactorNameChange}
+        handleOptionNameChange={this.handleOptionNameChange}
       />
     );
   }

@@ -1,8 +1,16 @@
 import React, { Component } from "react";
-import TableDataCell from "./TableDataCell";
 
-function returnOptionCell(option) {
-  return <td contentEditable="true" >{option.name}</td>;
+function returnOptionCell(option, handleOptionNameChange) {
+  return (
+    <td
+      contentEditable="true"
+      onInput={(event) => {
+        handleOptionNameChange(event, option);
+      }}
+    >
+      {option.name}
+    </td>
+  );
 }
 
 function SecondRow(props) {
@@ -10,7 +18,9 @@ function SecondRow(props) {
     <tr>
       <td></td>
       <td>Options</td>
-      {props.state.options.map(returnOptionCell)}
+      {props.state.options.map((option) =>
+        returnOptionCell(option, props.handleOptionNameChange)
+      )}
       <td>
         <button type="submit" name="addOptionButton">
           +
