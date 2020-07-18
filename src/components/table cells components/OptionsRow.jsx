@@ -13,7 +13,7 @@ function returnOptionCell(option, handleOptionNameChange) {
   );
 }
 
-function SecondRow(props) {
+function OptionsRow(props) {
   return (
     <tr>
       <td></td>
@@ -30,4 +30,4 @@ function SecondRow(props) {
   );
 }
 
-export default SecondRow;
+export default OptionsRow;
