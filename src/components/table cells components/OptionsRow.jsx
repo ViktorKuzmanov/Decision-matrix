@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import TableDataCell from "./TableDataCell";
 
 function returnOptionCell(option) {
-  return <td contentEditable="true">{option.name}</td>;
+  return <td contentEditable="true" >{option.name}</td>;
 }
 
 function SecondRow(props) {

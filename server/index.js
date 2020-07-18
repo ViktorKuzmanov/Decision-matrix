@@ -11,7 +11,7 @@ let table = {
       {
           "id":"0",
           "name": "Semejstvo",
-          "weight": 9,
+          "weight": 10,
           "scores": [
               7,
               10
