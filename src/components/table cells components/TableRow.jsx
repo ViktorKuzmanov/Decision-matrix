@@ -28,7 +28,7 @@ function TableRow(props) {
           <ScoreCell
             value={score}
             onChange={(event) => {
-              props.handleOptionChange(event, props.factor);
+              props.handleScoreChange(event, props.factor);
             }}
           />
         );

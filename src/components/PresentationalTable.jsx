@@ -22,7 +22,7 @@ function PresentationalTable(props) {
             return (
               <TableRow
                 factor={factor}
-                handleOptionChange={props.handleOptionChange}
+                handleScoreChange={props.handleScoreChange}
                 handleWeightChange={props.handleWeightChange}
                 handleFactorNameChange={props.handleFactorNameChange}
               />
