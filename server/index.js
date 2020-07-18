@@ -58,11 +58,11 @@ app.get('/table', (req,res) => {
 
 // ? Kako da a imenua route-ot nekako changeWeight ne e bash taman
 
-app.post("/changeWeight", (req, res) => {
-  const updatedFactor = req.body.updatedFactor;
+app.post("/changeFactor", (req, res) => {
+  const changedFactor = req.body.changedFactor;
   for(const i in table.factors) {
-    if(table.factors[i].id === updatedFactor.id) {
-      table.factors[i] = updatedFactor;
+    if(table.factors[i].id === changedFactor.id) {
+      table.factors[i] = changedFactor;
     }
   }
   updateResultsInTable(table);

@@ -23,12 +23,12 @@ function TableRow(props) {
           props.handleWeightChange(event, props.factor);
         }}
       />
-      {props.factor.scores.map((score) => {
+      {props.factor.scores.map((score, index) => {
         return (
           <ScoreCell
             value={score}
             onChange={(event) => {
-              props.handleScoreChange(event, props.factor);
+              props.handleScoreChange(event, props.factor, index);
             }}
           />
         );

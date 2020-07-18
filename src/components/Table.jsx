@@ -10,6 +10,7 @@ export default class Table extends React.Component {
       options: [],
     };
     this.handleWeightChange = this.handleWeightChange.bind(this);
+    this.handleScoreChange = this.handleScoreChange.bind(this);
   }
   componentDidMount() {
     axios.get("table").then((res) => {
@@ -18,18 +19,23 @@ export default class Table extends React.Component {
     });
   }
 
-  handleScoreChange(event, factor) {
+  handleScoreChange(event, factor, scoreIndex) {
     console.log("handleScoreChange is triggered");
-    console.log(event.target.value);
-    console.log(factor);
+    const changedScore = event.target.value;
+    const changedFactor = factor;
+    changedFactor.scores[scoreIndex] = parseInt(changedScore);
+    // ! Tuka this.setState od updated state from response 
+    axios.post("changeFactor", { changedFactor }).then((res) => {
+      console.log(res.data);
+    });
   }
 
   handleWeightChange(event, factor) {
     console.log("handleWeightChange triggered");
     const changedWeight = event.target.value;
-    const updatedFactor = factor;
-    updatedFactor.weight = parseInt(changedWeight);
-    axios.post("changeWeight", { updatedFactor }).then((res) => {
+    const changedFactor = factor;
+    changedFactor.weight = parseInt(changedWeight);
+    axios.post("changeFactor", { changedFactor }).then((res) => {
       this.setState(res.data);
     });
   }
