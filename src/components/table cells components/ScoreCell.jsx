@@ -7,7 +7,7 @@ function ScoreCell(props) {
         name="cars"
         id="cars"
         value={props.value}
-        onChange={props.handleOptionChange}
+        onChange={props.onChange}
       >
         <option value="1">1</option>
         <option value="2">2</option>
