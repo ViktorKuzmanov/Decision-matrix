@@ -15,6 +15,7 @@ export default class Table extends React.Component {
       factors: [],
       options: [],
     };
+    this.handleWeightChange = this.handleWeightChange.bind(this);
   }
   componentDidMount() {
     axios.get("table").then((res) => {
@@ -36,9 +37,9 @@ export default class Table extends React.Component {
     const changedWeight = event.target.value;
     const updatedFactor = factor;
     updatedFactor.weight = parseInt(changedWeight);
-    axios
-      .post("changeWeight", { updatedFactor })
-      .then((res) => console.log(res));
+    axios.post("changeWeight", { updatedFactor }).then((res) => {
+      this.setState(res.data);
+    });
   }
 
   handleFactorNameChange(event, factor) {

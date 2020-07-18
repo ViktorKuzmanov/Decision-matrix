@@ -66,15 +66,15 @@ app.post("/changeWeight", (req, res) => {
     }
   }
   updateResultsInTable(table);
-  console.log(table);
-  res.send("a");
+  res.json(table);
 })
 
 function updateResultsInTable(table) {
+  // Reset results to 0 because we will count again
   for(let i in table.options) {
     table.options[i].result = 0;
   }
-
+  // Change the results with updated ones
   for(let i in table.factors) {
     const weight = table.factors[i].weight;
     for(let j in table.factors[i].scores) {
