@@ -69,6 +69,16 @@ app.post("/changeFactor", (req, res) => {
   res.json(table);
 })
 
+app.post("/changeOptionName", (req,res) => {
+  const { changedOption } = req.body;
+  for(let i in table.options) {
+    if(i === changedOption.id) {
+      table.options[i] = changedOption;
+    }
+  }
+  res.json(table)
+})
+
 function updateResultsInTable(table) {
   // Reset results to 0 because we will count again
   for(let i in table.options) {

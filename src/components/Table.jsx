@@ -54,6 +54,7 @@ export default class Table extends React.Component {
     console.log(option);
     const changedOption = option;
     changedOption.name = changedName;
+    axios.post("changeOptionName", { changedOption });
   }
 
   render() {
