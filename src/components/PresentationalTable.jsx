@@ -24,6 +24,7 @@ function PresentationalTable(props) {
                 factor={factor}
                 handleOptionChange={props.handleOptionChange}
                 handleWeightChange={props.handleWeightChange}
+                handleFactorNameChange={props.handleFactorNameChange}
               />
             );
           })}

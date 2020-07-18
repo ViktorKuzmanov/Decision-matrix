@@ -23,13 +23,23 @@ export default class Table extends React.Component {
     });
   }
 
-  handleOptionChange(event) {
+  handleOptionChange(event, factor) {
     console.log("ohandleOptionChange is triggered");
+    console.log(event.target.value);
+    console.log(factor);
   }
 
-  handleWeightChange(factor) {
+  handleWeightChange(event, factor) {
     // ! sredi weight
     console.log("handleWeightChange triggered");
+    console.log(event.target.value);
+    console.log(factor);
+  }
+
+  handleFactorNameChange(event, factor) {
+    console.log("handleFactorNameChange triggered");
+    console.log(event.target.textContent);
+    console.log(factor);
   }
 
   render() {
@@ -38,6 +48,7 @@ export default class Table extends React.Component {
         state={this.state}
         handleOptionChange={this.handleOptionChange}
         handleWeightChange={this.handleWeightChange}
+        handleFactorNameChange={this.handleFactorNameChange}
       />
     );
   }
