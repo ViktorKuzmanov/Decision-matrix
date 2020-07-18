@@ -24,9 +24,8 @@ export default class Table extends React.Component {
     const changedScore = event.target.value;
     const changedFactor = factor;
     changedFactor.scores[scoreIndex] = parseInt(changedScore);
-    // ! Tuka this.setState od updated state from response 
     axios.post("changeFactor", { changedFactor }).then((res) => {
-      console.log(res.data);
+      this.setState(res.data);
     });
   }
 
