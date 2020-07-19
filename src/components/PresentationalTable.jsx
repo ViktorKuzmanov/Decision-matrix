@@ -34,7 +34,7 @@ function PresentationalTable(props) {
 
           <tr>
             <td>
-              <button>+</button>
+              <button onClick={props.handleAddNewFactor}>+</button>
             </td>
           </tr>
         </tbody>
