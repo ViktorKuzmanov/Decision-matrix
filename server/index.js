@@ -58,8 +58,10 @@ app.get('/table', (req,res) => {
 
 
 app.post("/addNewFactor", (req, res) => {
-  console.log(req.body);
-  res.json();
+  const { newFactor } = req.body;
+  table.factors.push(newFactor)
+  console.log(table)
+  res.json(table);
 })
 
 // ? Kako da a imenua route-ot nekako changeWeight ne e bash taman
