@@ -64,6 +64,12 @@ app.post("/addNewFactor", (req, res) => {
   res.json(table);
 })
 
+app.post("/addNewOption", (req, res) => {
+  const { newOption } = req.body;
+  console.log(newOption);
+  res.json();
+})
+
 // ? Kako da a imenua route-ot nekako changeWeight ne e bash taman
 
 app.post("/changeFactor", (req, res) => {

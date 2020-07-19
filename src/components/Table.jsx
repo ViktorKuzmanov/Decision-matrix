@@ -61,6 +61,15 @@ export default class Table extends React.Component {
 
   handleAddNewOption() {
     console.log("add new option");
+    // ? zos vaka gi prakjam kaa js object na server i gi dodavam tamu u json obejct i ne mi
+    // ? javua greska
+    const newOptionId = this.state.options.length;
+    const newOption = {
+      id: newOptionId,
+      name: "",
+      result: 0,
+    };
+    axios.post("addNewOption", { newOption });
   }
 
   handleAddNewFactor() {
