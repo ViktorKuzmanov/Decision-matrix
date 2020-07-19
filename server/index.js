@@ -9,7 +9,7 @@ app.use(express.json());
 let table = {
   "factors": [
       {
-          "id":"0",
+          "id":0,
           "name": "Semejstvo",
           "weight": 10,
           "scores": [
@@ -18,7 +18,7 @@ let table = {
           ]
       },
       {
-          "id":"1",
+          "id":1,
           "name": "Zabava",
           "weight": 7,
           "scores": [
@@ -27,7 +27,7 @@ let table = {
           ]
       },
       {
-          "id":"2",
+          "id":2,
           "name": "Prijateli",
           "weight": 8,
           "scores": [
@@ -38,12 +38,12 @@ let table = {
   ],
   "options": [
       {
-        "id" :"0",
+        "id" :0,
         "name": "Skopje",
         "result" : 0
       },
       {
-        "id" :"1",
+        "id" :1,
         "name": "Kavadarci",
         "result" : 0
       }
