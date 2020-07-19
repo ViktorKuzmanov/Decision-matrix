@@ -91,8 +91,8 @@ app.post("/changeFactor", (req, res) => {
 
 app.post("/changeOptionName", (req,res) => {
   const { changedOption } = req.body;
-  for(let i in table.options) {
-    if(i === changedOption.id) {
+  for(const i in table.options) {
+    if(table.options[i].id === changedOption.id) {
       table.options[i] = changedOption;
     }
   }

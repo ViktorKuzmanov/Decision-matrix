@@ -52,8 +52,8 @@ export default class Table extends React.Component {
   }
 
   handleOptionNameChange(event, option) {
+    console.log("handleOptionNameChange treigered");
     const changedName = event.target.textContent;
-    console.log(option);
     const changedOption = option;
     changedOption.name = changedName;
     axios.post("changeOptionName", { changedOption });
