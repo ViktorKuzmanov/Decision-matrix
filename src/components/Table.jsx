@@ -69,7 +69,9 @@ export default class Table extends React.Component {
       name: "",
       result: 0,
     };
-    axios.post("addNewOption", { newOption });
+    axios.post("addNewOption", { newOption }).then((res) => {
+      this.setState(res.data);
+    });
   }
 
   handleAddNewFactor() {

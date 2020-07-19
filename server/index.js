@@ -61,13 +61,19 @@ app.post("/addNewFactor", (req, res) => {
   const { newFactor } = req.body;
   table.factors.push(newFactor)
   console.log(table)
+  // ! tuka neli treba da a update result bazirano na noviot factor
   res.json(table);
 })
 
 app.post("/addNewOption", (req, res) => {
   const { newOption } = req.body;
-  console.log(newOption);
-  res.json();
+  table.options.push(newOption)
+  // add scores of new option (in factors)
+  for(let i in table.factors) {
+    table.factors[i].scores.push(1);
+  }
+  updateResultsInTable(table)
+  res.json(table);
 })
 
 // ? Kako da a imenua route-ot nekako changeWeight ne e bash taman
