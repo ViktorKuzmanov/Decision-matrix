@@ -14,6 +14,7 @@ export default class Table extends React.Component {
     this.handleFactorNameChange = this.handleFactorNameChange.bind(this);
     this.handleOptionNameChange = this.handleOptionNameChange.bind(this);
     this.handleAddNewFactor = this.handleAddNewFactor.bind(this);
+    this.handleAddNewOption = this.handleAddNewOption.bind(this);
   }
   componentDidMount() {
     axios.get("table").then((res) => {
@@ -58,6 +59,10 @@ export default class Table extends React.Component {
     axios.post("changeOptionName", { changedOption });
   }
 
+  handleAddNewOption() {
+    console.log("add new option");
+  }
+
   handleAddNewFactor() {
     console.log("add new factor");
     const numOfOptions = this.state.options.length;
@@ -82,6 +87,7 @@ export default class Table extends React.Component {
         handleFactorNameChange={this.handleFactorNameChange}
         handleOptionNameChange={this.handleOptionNameChange}
         handleAddNewFactor={this.handleAddNewFactor}
+        handleAddNewOption={this.handleAddNewOption}
       />
     );
   }

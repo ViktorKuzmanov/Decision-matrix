@@ -22,9 +22,7 @@ function OptionsRow(props) {
         returnOptionCell(option, props.handleOptionNameChange)
       )}
       <td>
-        <button type="submit" name="addOptionButton">
-          +
-        </button>
+        <button onClick={props.handleAddNewOption}>+</button>
       </td>
     </tr>
   );
