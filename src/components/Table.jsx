@@ -60,7 +60,14 @@ export default class Table extends React.Component {
 
   handleAddNewFactor() {
     console.log("add new factor");
-    
+    const indexOfNewFactor = this.state.factors.length;
+    const newFactor = {
+      id: indexOfNewFactor,
+      name: "",
+      weight: 0,
+      scores: [],
+    };
+    axios.post("addNewFactor", { newFactor });
   }
 
   render() {
