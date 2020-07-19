@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import TableDataCell from "./TableDataCell";
 
-function ThirdRow() {
+function ThirdRow(props) {
   return (
     <tr>
       <TableDataCell text="Decision making factors" isEditable="false" />
       <TableDataCell text="Weighting" />
-      <TableDataCell text="Your score" />
-      <TableDataCell text="Your score" />
+      {props.options.map((option) => {
+        return <td>Your Score</td>;
+      })}
     </tr>
   );
 }

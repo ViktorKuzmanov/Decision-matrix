@@ -17,7 +17,7 @@ function PresentationalTable(props) {
             state={props.state}
             handleOptionNameChange={props.handleOptionNameChange}
           />
-          <ThirdRow />
+          <ThirdRow options={props.state.options} />
         </thead>
 
         <tbody>
