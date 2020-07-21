@@ -15,6 +15,7 @@ export default class Table extends React.Component {
     this.handleOptionNameChange = this.handleOptionNameChange.bind(this);
     this.handleAddNewFactor = this.handleAddNewFactor.bind(this);
     this.handleAddNewOption = this.handleAddNewOption.bind(this);
+    this.handleFactorDelete = this.handleFactorDelete.bind(this);
   }
   componentDidMount() {
     axios.get("table").then((res) => {
@@ -89,8 +90,16 @@ export default class Table extends React.Component {
     });
   }
 
+  handleFactorDelete(event, factor) {
+    event.preventDefault();
+    console.log("handleFactorDelete triggered");
+    console.log(factor);
+  }
+
   render() {
     return (
+      // ? dali e dobro u mojta app so prenesuam props nekolku sloevi podole od parent do chil component
+      // ? ... ili treba tia child components da imat svoj state
       <PresentationalTable
         state={this.state}
         handleScoreChange={this.handleScoreChange}
@@ -99,6 +108,7 @@ export default class Table extends React.Component {
         handleOptionNameChange={this.handleOptionNameChange}
         handleAddNewFactor={this.handleAddNewFactor}
         handleAddNewOption={this.handleAddNewOption}
+        handleFactorDelete={this.handleFactorDelete}
       />
     );
   }

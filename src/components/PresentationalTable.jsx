@@ -29,6 +29,7 @@ function PresentationalTable(props) {
                 handleScoreChange={props.handleScoreChange}
                 handleWeightChange={props.handleWeightChange}
                 handleFactorNameChange={props.handleFactorNameChange}
+                handleFactorDelete={props.handleFactorDelete}
               />
             );
           })}
