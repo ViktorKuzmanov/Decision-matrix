@@ -25,7 +25,6 @@ export default class Table extends React.Component {
   }
 
   handleFactorDelete(event, factor) {
-    event.preventDefault();
     console.log("handleFactorDelete triggered");
     const factorToDelete = factor;
     axios.post("deleteFactor", factorToDelete).then((res) => {
