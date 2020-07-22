@@ -16,6 +16,7 @@ export default class Table extends React.Component {
     this.handleAddNewFactor = this.handleAddNewFactor.bind(this);
     this.handleAddNewOption = this.handleAddNewOption.bind(this);
     this.handleFactorDelete = this.handleFactorDelete.bind(this);
+    this.handleOptionDelete = this.handleOptionDelete.bind(this);
   }
   componentDidMount() {
     axios.get("table").then((res) => {
@@ -102,6 +103,10 @@ export default class Table extends React.Component {
 
   handleOptionDelete(option) {
     console.log("handleOptionDelete triggered");
+    console.log(option);
+    axios.post("deleteOption", option).then((res) => {
+      console.log(res.data);
+    });
   }
 
   render() {

@@ -104,6 +104,12 @@ app.post("/deleteFactor", (req,res) => {
   res.json(table);
 })
 
+app.post("/deleteOption", (req,res) => {
+  const optionToDelete = req.body;
+  console.log(optionToDelete);
+  res.json(table);
+})
+
 function updateResultsInTable(table) {
   // Reset results to 0 because we will count again
   for(let i in table.options) {
