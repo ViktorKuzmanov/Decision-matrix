@@ -100,6 +100,10 @@ export default class Table extends React.Component {
     });
   }
 
+  handleOptionDelete(option) {
+    console.log("handleOptionDelete triggered");
+  }
+
   render() {
     return (
       // ? dali e dobro u mojta app so prenesuam props nekolku sloevi podole od parent do chil component
@@ -113,6 +117,7 @@ export default class Table extends React.Component {
         handleAddNewFactor={this.handleAddNewFactor}
         handleAddNewOption={this.handleAddNewOption}
         handleFactorDelete={this.handleFactorDelete}
+        handleOptionDelete={this.handleOptionDelete}
       />
     );
   }
