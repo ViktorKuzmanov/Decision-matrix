@@ -24,6 +24,17 @@ export default class Table extends React.Component {
     });
   }
 
+  handleFactorDelete(event, factor) {
+    event.preventDefault();
+    console.log("handleFactorDelete triggered");
+    const factorToDelete = factor;
+    axios.post("deleteFactor", factorToDelete).then((res) => {
+      this.setState((prevState) => {
+        return res.data;
+      });
+    });
+  }
+
   handleScoreChange(event, factor, scoreIndex) {
     console.log("handleScoreChange is triggered");
     const changedScore = event.target.value;
@@ -87,15 +98,6 @@ export default class Table extends React.Component {
     };
     axios.post("addNewFactor", { newFactor }).then((res) => {
       this.setState(res.data);
-    });
-  }
-
-  handleFactorDelete(event, factor) {
-    event.preventDefault();
-    console.log("handleFactorDelete triggered");
-    const factorToDelete = factor;
-    axios.post("deleteFactor", factorToDelete).then((res) => {
-      console.log(res.data);
     });
   }
 

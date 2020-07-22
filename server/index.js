@@ -100,7 +100,7 @@ app.post("/changeOptionName", (req,res) => {
 
 app.post("/deleteFactor", (req,res) => {
   const factorToDelete = req.body;
-  table = table.factors.filter(factor => factor.id != factorToDelete.id);
+  table.factors = table.factors.filter(factor => factor.id != factorToDelete.id);
   res.json(table);
 })
 
