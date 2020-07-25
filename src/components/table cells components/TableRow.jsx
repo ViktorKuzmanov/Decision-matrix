@@ -5,7 +5,6 @@ function TableRow(props) {
   // ? kako da znam dali da staam state na via component ili da si prezima state od Table Componentot
   // ? should i make event handler in the component that triggers the event or in parent ?
   return (
-    //! tuka u via component prenesuam handleDoubleClickToDelete callback a nego koristam
     <tr>
       <td
         contentEditable="true"

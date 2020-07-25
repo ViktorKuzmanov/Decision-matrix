@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const { log } = require("console");
 const app = express(); // create express app
+// ! napraj avtomatski da se presmetuat result prviot pat kaa kje se load stranat
 
 app.use(express.urlencoded());
 app.use(express.json());
@@ -66,6 +67,8 @@ app.post("/addNewFactor", (req, res) => {
 })
 
 app.post("/addNewOption", (req, res) => {
+  // ! BUG: Ne se dodava option nekoas obivno posle 3tat option ako sakas ushte
+  // ! BUG ne se menjata scores nekoas na novo daddenite options
   const { newOption } = req.body;
   table.options.push(newOption)
   // add scores of new option (in factors)
@@ -96,6 +99,7 @@ app.post("/changeOptionName", (req,res) => {
       table.options[i] = changedOption;
     }
   }
+  res.json(table);
 })
 
 app.post("/deleteFactor", (req,res) => {
@@ -105,9 +109,11 @@ app.post("/deleteFactor", (req,res) => {
 })
 
 app.post("/deleteOption", (req,res) => {
+  // ! BUG: Ne saka da se delete option nekoas
+  // ! BUG : NE SE DELETE SCORES NEKOAS
   const optionToDelete = req.body;
-  console.log(optionToDelete);
-  res.json(table);
+  // Delete score cells of this optionToDelete
+  
 })
 
 function updateResultsInTable(table) {
