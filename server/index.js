@@ -112,8 +112,21 @@ app.post("/deleteOption", (req,res) => {
   // ! BUG: Ne saka da se delete option nekoas
   // ! BUG : NE SE DELETE SCORES NEKOAS
   const optionToDelete = req.body;
-  // Delete score cells of this optionToDelete
-  
+  // vaa promenliva go prakjame od front end samo za da go znajme indeksnot t.e. kade 
+  // se scores so treba da gi izbrishime
+  const iOfOption = optionToDelete.iOfOption;
+  // Delete score cells of this option we want to delete
+  for(let i in table.factors) {
+    for(let j in table.factors[i].scores) {
+      if(j == iOfOption) {
+        table.factors[i].scores.splice(j,1);
+      }
+    } 
+  }
+  delete optionToDelete.iOfOption;
+  table.options = table.options.filter(option => option.id != optionToDelete.id);
+  console.log(table)
+  res.json(table);
 })
 
 function updateResultsInTable(table) {
