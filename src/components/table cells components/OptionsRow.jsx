@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 
-function returnOptionCell(option, handleOptionNameChange, handleOptionDelete) {
+function returnOptionCell(
+  option,
+  handleOptionNameChange,
+  handleOptionDelete,
+  iOfOption
+) {
   return (
     <td
       contentEditable="true"
       onInput={(event) => {
         handleOptionNameChange(event, option);
       }}
-      onDoubleClick={() => handleOptionDelete(option)}
+      onDoubleClick={() => handleOptionDelete(option, iOfOption)}
     >
       {option.name}
     </td>
@@ -19,11 +24,12 @@ function OptionsRow(props) {
     <tr>
       <td></td>
       <td>Options</td>
-      {props.state.options.map((option) =>
+      {props.state.options.map((option, iOfOption) =>
         returnOptionCell(
           option,
           props.handleOptionNameChange,
-          props.handleOptionDelete
+          props.handleOptionDelete,
+          iOfOption
         )
       )}
       <td>

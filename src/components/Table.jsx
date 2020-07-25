@@ -101,12 +101,12 @@ export default class Table extends React.Component {
     });
   }
 
-  handleOptionDelete(option) {
+  handleOptionDelete(option, iOfOption) {
     // ? kaa kje go dodadam via event handler(callback) toa mi e 1 commit
     // ? drug commit kaa kje pratam post request na serverot i tamu kje ima porta so kje go prima
     // ? tret commit koa kje bide zavrsheno se i kje se update ui na frontent
     console.log("handleOptionDelete triggered");
-    console.log(option);
+    console.log(iOfOption);
     axios.post("deleteOption", option).then((res) => {
       console.log(res.data);
     });
