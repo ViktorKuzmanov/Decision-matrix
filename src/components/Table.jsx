@@ -75,7 +75,9 @@ export default class Table extends React.Component {
     console.log("add new option");
     // ? zos vaka gi prakjam kaa js object na server i gi dodavam tamu u json obejct i ne mi
     // ? javua greska
-    const newOptionId = this.state.options.length;
+    // Get the last option's id + 1 (new option id)
+    const lastOption = this.state.options[this.state.options.length - 1];
+    const newOptionId = lastOption.id + 1;
     const newOption = {
       id: newOptionId,
       name: "",

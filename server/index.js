@@ -125,7 +125,6 @@ app.post("/deleteOption", (req,res) => {
   }
   delete optionToDelete.iOfOption;
   table.options = table.options.filter(option => option.id != optionToDelete.id);
-  console.log(table)
   res.json(table);
 })
 
