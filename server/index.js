@@ -62,13 +62,11 @@ app.post("/addNewFactor", (req, res) => {
   const { newFactor } = req.body;
   table.factors.push(newFactor)
   console.log(table)
-  // ! tuka neli treba da a update result bazirano na noviot factor
+  updateResultsInTable(table);
   res.json(table);
 })
 
 app.post("/addNewOption", (req, res) => {
-  // ! BUG: Ne se dodava option nekoas obivno posle 3tat option ako sakas ushte
-  // ! BUG ne se menjata scores nekoas na novo daddenite options
   const { newOption } = req.body;
   table.options.push(newOption)
   // add scores of new option (in factors)
@@ -109,8 +107,6 @@ app.post("/deleteFactor", (req,res) => {
 })
 
 app.post("/deleteOption", (req,res) => {
-  // ! BUG: Ne saka da se delete option nekoas
-  // ! BUG : NE SE DELETE SCORES NEKOAS
   const optionToDelete = req.body;
   // vaa promenliva go prakjame od front end samo za da go znajme indeksnot t.e. kade 
   // se scores so treba da gi izbrishime
