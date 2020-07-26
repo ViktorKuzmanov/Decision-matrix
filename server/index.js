@@ -3,7 +3,8 @@ const express = require("express");
 const { log } = require("console");
 const app = express(); // create express app
 // ! napraj avtomatski da se presmetuat result prviot pat kaa kje se load stranat
-
+// ! file structure
+// ! api
 app.use(express.urlencoded());
 app.use(express.json());
 
@@ -103,6 +104,7 @@ app.post("/changeOptionName", (req,res) => {
 app.post("/deleteFactor", (req,res) => {
   const factorToDelete = req.body;
   table.factors = table.factors.filter(factor => factor.id != factorToDelete.id);
+  updateResultsInTable(table);
   res.json(table);
 })
 
