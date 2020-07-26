@@ -55,6 +55,7 @@ let table = {
 app.use(express.static(path.join(__dirname, "..", "build")));
 
 app.get('/table', (req,res) => {
+  updateResultsInTable(table);
   res.json(table);
 })
 
