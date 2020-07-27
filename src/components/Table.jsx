@@ -89,11 +89,13 @@ export default class Table extends React.Component {
   }
 
   handleAddNewFactor() {
-    console.log("add new factor");
+    console.log("handleAddNewFactor is triggered");
     const numOfOptions = this.state.options.length;
-    const indexOfNewFactor = this.state.factors.length;
+    const indexOfLastFactor = this.state.factors.length - 1;
+    const lastFactor = this.state.factors[indexOfLastFactor];
+    const idOfNewFactor = lastFactor.id + 1;
     const newFactor = {
-      id: indexOfNewFactor,
+      id: idOfNewFactor,
       name: "",
       weight: 1,
       scores: new Array(numOfOptions).fill(1),

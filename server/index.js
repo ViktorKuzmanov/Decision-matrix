@@ -63,8 +63,8 @@ app.get('/table', (req,res) => {
 app.post("/addNewFactor", (req, res) => {
   const { newFactor } = req.body;
   table.factors.push(newFactor)
-  console.log(table)
   updateResultsInTable(table);
+  console.log(table);
   res.json(table);
 })
 
