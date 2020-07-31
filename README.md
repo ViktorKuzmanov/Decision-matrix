@@ -1,8 +1,14 @@
 # Decision-matrix
 Simple web app that helps you make decisions
 
+---
+
 ### Usage
 Search town by typing it in the text box (ex: London) and get current temperature in that town.
+
+---
+
+### What I've learned
 
 📖 Upon building this weather app I learned how to:
 
