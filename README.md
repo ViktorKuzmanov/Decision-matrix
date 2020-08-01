@@ -10,9 +10,8 @@ Search town by typing it in the text box (ex: London) and get current temperatur
 
 ### What I've learned
 
-📖 Upon building this weather app I learned how to:
+📖 Upon building this web app I learned:
 
-- make express server 
-- fetch data from openweathermap.org using their API and making GET requests using Node.js
-- parse JSON 
-- get the data send in the post request using Body-Parser package
+- how to create and use React components
+- about state and lifecycle methods in React
+- how to use axios to send requests
