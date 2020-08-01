@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import TableDataCell from "./TableDataCell";
 
 function returnResultCell(result) {
-  return <TableDataCell text={result.result} />;
+  return <td>{result.result}</td>;
 }
 
 function FirstRow(props) {
