@@ -9,7 +9,7 @@ function FirstRow(props) {
     <tr>
       <td></td>
       <td>Your weighted decision result:</td>
-      {props.state.options.map(returnResultCell)}
+      {props.options.map(returnResultCell)}
     </tr>
   );
 }

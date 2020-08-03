@@ -120,11 +120,14 @@ export default class Table extends React.Component {
   }
 
   render() {
+    const factors = this.state.factors;
+    const options = this.state.options;
     return (
       // ? dali e dobro u mojta app so prenesuam props nekolku sloevi podole od parent do chil component
       // ? ... ili treba tia child components da imat svoj state
       <PresentationalTable
-        state={this.state}
+        factors={factors}
+        options={options}
         handleScoreChange={this.handleScoreChange}
         handleWeightChange={this.handleWeightChange}
         handleFactorNameChange={this.handleFactorNameChange}

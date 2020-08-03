@@ -12,18 +12,18 @@ function PresentationalTable(props) {
         class="table table-bordered table-responsive-md table-striped text-center"
       >
         <thead>
-          <FirstRow state={props.state} />
+          <FirstRow factors={props.factors} options={props.options} />
           <OptionsRow
-            state={props.state}
+            options={props.options}
             handleOptionNameChange={props.handleOptionNameChange}
             handleAddNewOption={props.handleAddNewOption}
             handleOptionDelete={props.handleOptionDelete}
           />
-          <ThirdRow options={props.state.options} />
+          <ThirdRow options={props.options} />
         </thead>
 
         <tbody>
-          {props.state.factors.map((factor) => {
+          {props.factors.map((factor) => {
             return (
               <TableRow
                 factor={factor}

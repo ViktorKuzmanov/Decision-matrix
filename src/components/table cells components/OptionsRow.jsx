@@ -24,7 +24,7 @@ function OptionsRow(props) {
     <tr>
       <td></td>
       <td>Options</td>
-      {props.state.options.map((option, iOfOption) =>
+      {props.options.map((option, iOfOption) =>
         returnOptionCell(
           option,
           props.handleOptionNameChange,
