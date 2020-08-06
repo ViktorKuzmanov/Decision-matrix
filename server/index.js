@@ -62,7 +62,6 @@ app.post("/addNewFactor", (req, res) => {
   const { newFactor } = req.body;
   table.factors.push(newFactor)
   updateResultsInTable(table);
-  console.log(table);
   res.json(table);
 })
 
@@ -76,8 +75,6 @@ app.post("/addNewOption", (req, res) => {
   updateResultsInTable(table)
   res.json(table);
 })
-
-// ? Kako da a imenua route-ot nekako changeWeight ne e bash taman
 
 app.post("/changeFactor", (req, res) => {
   const changedFactor = req.body.changedFactor;

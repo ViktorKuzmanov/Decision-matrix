@@ -73,8 +73,6 @@ export default class Table extends React.Component {
 
   handleAddNewOption() {
     console.log("add new option");
-    // ? zos vaka gi prakjam kaa js object na server i gi dodavam tamu u json obejct i ne mi
-    // ? javua greska
     // Get the last option's id + 1 (new option id)
     const lastOption = this.state.options[this.state.options.length - 1];
     const newOptionId = lastOption.id + 1;
@@ -106,9 +104,6 @@ export default class Table extends React.Component {
   }
 
   handleOptionDelete(option, iOfOption) {
-    // ? kaa kje go dodadam via event handler(callback) toa mi e 1 commit
-    // ? drug commit kaa kje pratam post request na serverot i tamu kje ima porta so kje go prima
-    // ? tret commit koa kje bide zavrsheno se i kje se update ui na frontent
     console.log("handleOptionDelete triggered");
     option = {
       ...option,
@@ -123,8 +118,6 @@ export default class Table extends React.Component {
     const factors = this.state.factors;
     const options = this.state.options;
     return (
-      // ? dali e dobro u mojta app so prenesuam props nekolku sloevi podole od parent do chil component
-      // ? ... ili treba tia child components da imat svoj state
       <PresentationalTable
         factors={factors}
         options={options}
