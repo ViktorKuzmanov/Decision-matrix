@@ -1,8 +1,8 @@
 import React from "react";
-import FirstRow from "./table cells components/FirstRow";
-import OptionsRow from "./table cells components/OptionsRow";
-import ThirdRow from "./table cells components/ThirdRow";
-import TableRow from "./table cells components/TableRow";
+import FirstRow from "./table-components/FirstRow";
+import OptionsRow from "./table-components/OptionsRow";
+import ThirdRow from "./table-components/ThirdRow";
+import TableRow from "./table-components/TableRow";
 
 function PresentationalTable(props) {
   return (
