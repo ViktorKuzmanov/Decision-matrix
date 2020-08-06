@@ -1,7 +1,7 @@
 import React from "react";
-import FirstRow from "./table-components/FirstRow";
+import ResultsRow from "./table-components/ResultsRow";
 import OptionsRow from "./table-components/OptionsRow";
-import ThirdRow from "./table-components/ThirdRow";
+import ColumnNameRow from "./table-components/ColumnNameRow";
 import TableRow from "./table-components/TableRow";
 
 function PresentationalTable(props) {
@@ -12,14 +12,14 @@ function PresentationalTable(props) {
         class="table table-bordered table-responsive-md table-striped text-center"
       >
         <thead>
-          <FirstRow factors={props.factors} options={props.options} />
+          <ResultsRow factors={props.factors} options={props.options} />
           <OptionsRow
             options={props.options}
             handleOptionNameChange={props.handleOptionNameChange}
             handleAddNewOption={props.handleAddNewOption}
             handleOptionDelete={props.handleOptionDelete}
           />
-          <ThirdRow options={props.options} />
+          <ColumnNameRow options={props.options} />
         </thead>
 
         <tbody>

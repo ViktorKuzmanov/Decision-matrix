@@ -4,7 +4,7 @@ function returnResultCell(result) {
   return <td>{result.result}</td>;
 }
 
-function FirstRow(props) {
+function ResultsRow(props) {
   return (
     <tr>
       <td></td>
@@ -14,4 +14,4 @@ function FirstRow(props) {
   );
 }
 
-export default FirstRow;
+export default ResultsRow;

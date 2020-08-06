@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-function ThirdRow(props) {
+function ColumnNameRow(props) {
   return (
     <tr>
       <td contentEditable="false">Decision making factors</td>
@@ -12,4 +12,4 @@ function ThirdRow(props) {
   );
 }
 
-export default ThirdRow;
+export default ColumnNameRow;
