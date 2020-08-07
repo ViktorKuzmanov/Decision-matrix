@@ -21,7 +21,7 @@ Option that has the highest result wins (is considered the best option).
 
 React:
 
-- React components
+- React class components
 - state and lifecycle methods in React
 - props 
 - event handling
