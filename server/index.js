@@ -136,7 +136,8 @@ function updateResultsInTable(table) {
   } 
 }
 
-// start express server on port 5000
-app.listen(5000, () => {
-  console.log("server started on port 5000");
-});
+const port = 3000
+
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`)
+})
