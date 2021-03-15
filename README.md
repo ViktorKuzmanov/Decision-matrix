@@ -1,5 +1,5 @@
 # Decision-matrix
-Simple web app that helps you make decisions
+Simple web app that helps you make decisions available here - https://decision-matrix-app.herokuapp.com/
 
 ---
 
